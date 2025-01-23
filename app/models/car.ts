@@ -15,7 +15,7 @@ export default class Car extends BaseModel {
   declare model: string
 
   @column()
-  declare notes: string
+  declare notes: string | null
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime

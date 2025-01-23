@@ -32,6 +32,6 @@ export const updateCarValidator = vine.compile(
       }),
     brand: vine.string().trim().minLength(1).maxLength(20),
     model: vine.string().trim().minLength(1).maxLength(20),
-    notes: vine.string().trim().maxLength(250).optional(),
+    notes: vine.string().maxLength(250).nullable(),  
   })
 )
