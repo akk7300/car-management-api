@@ -1,5 +1,5 @@
 # Car Management System
-A REST API built with AdonisJS 6 for managing car inventory.
+A REST API built with AdonisJS 6 for managing vehicle information.
 
 ## Prerequisites
 - Node.js >= 20
