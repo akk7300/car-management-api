@@ -1,6 +1,7 @@
 import { HttpContext } from '@adonisjs/core/http'
 import Car from '#models/car'
 import { createCarValidator, updateCarValidator } from '#validators/car'
+import { carModels } from '#models/car_data'
 
 export default class CarsController {
   async index({ request, response }: HttpContext) {
@@ -52,5 +53,16 @@ export default class CarsController {
     }
     await car.delete()
     return response.json({ message: 'Car deleted successfully' })
+  }
+
+  async getCarModels({ response }: HttpContext) {
+    try {
+      return response.json(carModels)
+    } catch (error) {
+      return response.status(500).json({
+        message: 'Error fetching car models',
+        error: error.message
+      })
+    }
   }
 }
